@@ -1,14 +1,14 @@
 <section id="home" class="home-page-content page-content">
-    <section class="homepage-slider">
-		<!--START: home_carousel-->
-		<div class="homeCarousel flexslider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]">
-			<ul class="slides">
-				<!--START: carousel-->
-				<li><a href="[link]"><img src="[image]" alt="" /></a></li>
-				<!--END: carousel-->
-			</ul>
-		</div>
-		<!--END: home_carousel-->
+    <section class="homepage-slider" tabindex="-1">
+            <!--START: home_carousel-->
+            <div class="homeCarousel flexslider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]" role="region" aria-roledescription="carousel" aria-label="Carousel" tabindex="-1">
+                <ul class="slides" tabindex="-1" aria-label="carousel" role="contentinfo">
+                    <!--START: carousel-->
+                    <li tabindex="-1"><a href="[link]" tabindex="-1"><img src="[image]" alt="carousel" tabindex="-1" width="1903" height="805" /></a></li>
+                    <!--END: carousel-->
+                </ul>
+            </div>
+            <!--END: home_carousel-->
     </section>
 
     <!--START: CATEGORY_HEADER-->
@@ -210,5 +210,4 @@
 
 <!--START: template_styles-->
 <link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
-<link href="assets/templates/common-core/lib/contentbuilder/minimalist-blocks/content.min.css" rel="stylesheet" type="text/css" />
 <!--END: template_styles-->
