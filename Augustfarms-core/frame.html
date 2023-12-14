@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>[TITLE]</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
     [META]
 
     <!--START: FRAME_RSSFEEDS-->
@@ -15,9 +15,8 @@
     <link rel="alternate" type="application/rss+xml" title="Latest Blog Posts (RSS 2.0)" href="[store_url]/rss.asp?type=blog" />
     <!--END: FRAME_RSSFEEDS-->
 
-    <!--START: page_styles-->
-    <link rel="preload stylesheet" href="assets/templates/common-core/css/core.css" type="text/css" as="style" />
-    <link
+	<!--START: page_styles-->
+	<link
         rel="preload stylesheet"
         href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
         as="style"
@@ -30,33 +29,7 @@
             type="text/css"
         />
     </noscript>
-    <link
-        rel="preload stylesheet"
-        href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
-        as="style"
-        onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-        <link
-            href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
-            rel="stylesheet"
-            type="text/css"
-        />
-    </noscript>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        rel="preload stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        as="style"
-        onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-            type="text/css"
-        />
-    </noscript>
+    <link rel="preload stylesheet" href="assets/templates/common-core/css/core.css" type="text/css" as="style" />
     [page_styles]
     <link
         rel="preload stylesheet"
@@ -71,11 +44,15 @@
             type="text/css"
         />
     </noscript>
-    <!--END: page_styles-->
+	<!--END: page_styles-->
 
 </head>
 <body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
-
+    <div id="skip">
+        <a href="#site-header">Skip to Header</a>
+        <a href="#page-content">Skip to Main Content</a>
+        <a href="#site-footer">Skip to Footer</a>
+    </div>
     <section class="top-nav hidden-xs">
         <div class="container">
             <div class="row">
@@ -99,12 +76,12 @@
         </div>
     </section>
 
-    <header class="site-header">
+    <header class="site-header" id="site-header">
         <div class="container">
             <div class="row">
                 <div class="col-xs-3 visible-xs text-left head-mobile-nav">
-                    <a href="#" id="mobile-menu-trigger">
-                        <span class="icon-menu"></span>
+                    <a href="#" id="mobile-menu-trigger" aria-label="menu trigger">
+                        <span class="icon-menu" role="presentation"></span>
                     </a>
                 </div>
 
@@ -118,8 +95,8 @@
                 </div>
 
                 <div class="col-xs-3 text-right visible-xs head-mobile-nav">
-                    <a href="/view_cart.asp">
-                        <span class="icon-basket"></span>
+                    <a href="/view_cart.asp" aria-label="view cart">
+                        <span class="icon-basket" role="presentation"></span>
                     </a>
                 </div>
 
@@ -164,7 +141,7 @@
                         <div id="user-account-btns" class="useraccount clearfix">
                             <ul class="clearfix">
                                 <li>
-                                    <a data-toggle="modal" data-target="#exampleModal">
+                                    <a data-toggle="modal" data-target="#exampleModal" aria-label="open search" role="link">
                                         <span class="icon-search"></span>
                                     </a>
                                 </li>
@@ -172,12 +149,12 @@
                                 <li><a href="logout.asp"><span class="icon-login"></span> [frame_logout-link-text]</a></li>
                                 <!--END: username-->
                                 <!--START: login-->
-                                <li><a href="myaccount.asp"><span class="icon-user"></span></a></li>
+                                <li><a href="myaccount.asp" aria-label="My Account"><span class="icon-user" role="presentation"></span></a></li>
                                 <!--END: login-->
                                 <li>
                                     <!--START: shopping_cart-->
-                                    <a href="view_cart.asp">
-                                        <span class="icon-basket cart-icon"></span>
+                                    <a href="view_cart.asp" aria-label="View Cart">
+                                        <span class="icon-basket cart-icon" role="presentation"></span>
                                     </a>
                                     <!--END: shopping_cart-->
                                 </li>
@@ -199,11 +176,13 @@
     </header>
 
     <!--Get current page template-->
-    [page_content]
+    <div id="page-content">
+        [page_content]
+    </div>
     <!--/Get current page template-->
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" id="site-footer">
         <div class="container">
 
             <div class="row">
@@ -268,10 +247,10 @@
                     </div>
 
                     <!--START: FRAME_LINKS-->
-                    <ul id="extrapages" class="list-unstyled row extrapages">
+                    <ul id="extrapages" class="list-unstyled row extrapages" role="menu">
                         <!--START: LINKS-->
                         <!--START: LINK_FORMAT-->
-                        <li class="col-md-4 col-sm-6"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
+                        <li class="col-md-4 col-sm-6" role="menuitem"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
                         <!--END: LINK_FORMAT-->
                         <!--END: LINKS-->
                     </ul>
@@ -340,14 +319,39 @@
     [quickview_modal]
     <!--END: quickview_modal-->
     
-    <link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/animation.css" type="text/css" />
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/fontello/css/animation.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/lib/fontello/css/animation.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
     
     <!--START: page_scripts-->
     <script src="assets/templates/common-core/lib/jquery.min.js"></script>
-    <script src="assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js"></script>
-    <script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script>
-    <script src="assets/templates/common-core/js/core.js"></script>
-    <script src="assets/templates/[template]/js/main.js"></script>
+    <script src="assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js" defer="defer"></script>
+    <script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js" defer="defer"></script>
+    <script src="assets/templates/common-core/js/core.js" defer="defer"></script>
+    <script src="assets/templates/[template]/js/main.js" defer="defer"></script>
     [page_scripts]
     <!--END: page_scripts-->
 
@@ -376,7 +380,7 @@
     <!--END: quicksearch-->
 
     <!--START: 3dcart stats-->
-    <div class="stats hidden"> 
+    <div id="3dStats" class="stats hidden"> 
         <script async language="JavaScript" type="text/javascript">
             var file='/stats/count.asp';
             var stats_d=new Date(); 
@@ -385,11 +389,11 @@
             var stats_x=stats_s*stats_m;
             var prdID = '[catalogid]';
             var catID = '[catid]';
-            var imgg = document.createElement('img');
-                imgg.Class
-                imgg.width = '1';
-                imgg.height = '1';
-                imgg.alt = "3dcart stats";
+            var stImg = document.createElement('img');
+                stImg.Class
+                stImg.width = '1';
+                stImg.height = '1';
+                stImg.alt = "3dcart stats";
 
             stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
             if (navigator.appName=='Netscape'){stats_b='NS';} 
@@ -403,12 +407,10 @@
             stats_j=navigator.javaEnabled();
             info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
 
-            imgg.src =file + '?' + info; 
-            document.getElementsByTagName('body')[0].appendChild(imgg);
-
-            //document.write('<img src="' + file + '?'+info+ '" width="1" height="1" border="0" alt="stats" />');
+            stImg.src =file + '?' + info; 
+            document.getElementById('3dStats').appendChild(stImg);
         </script>
-        <noscript><img border="0" src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
+        <noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
     </div>
     <!--END: 3dcart stats-->
     
