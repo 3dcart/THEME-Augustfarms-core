@@ -5,11 +5,31 @@
 font-family: 'Poppins', sans-serif;
 font-family: 'Muli', sans-serif;
  */
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
 	display: flex;
 	height: 100%;
 	flex-direction: column;
 	min-height: 100vh;
+}
+#skip a{
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+#skip a:focus{
+    position:static;
+    width:auto;
+    height:auto;
+}
+.homeCarousel.flexslider .slides img{
+    width:100%;
+}
+.antiCls { 
+    visibility: hidden; 
 }
 .page-content {
 	flex: 1 0 auto;
@@ -122,7 +142,7 @@ h1 {
 .btn-default,
 .btn-primary:focus, 
 .btn-primary:active:focus {
-    border-color: #008a96;
+    border-color: #00626B;
     background-color: #fff;
     color: #000;
 }
@@ -131,20 +151,20 @@ h1 {
 .btn-default:hover:focus,
 .btn-default.focus {
     color: #000;
-    background-color: #008a96;
-    border-color: #008a96;
+    background-color: #00626B;
+    border-color: #00626B;
 }
 .btn-default.btn-inverse,
 .btn-primary {
     color: #000;
-    background-color: #008a96;
-    border-color: #008a96;
+    background-color: #00626B;
+    border-color: #00626B;
 }
 .btn-default.btn-inverse:hover,
 .btn-primary:hover {
     color: #000;
-    background-color: #008a96;
-    border-color: #008a96;
+    background-color: #00626B;
+    border-color: #00626B;
     opacity: 0.8;
 }
 .navbar.navbar-inverse {
@@ -197,7 +217,7 @@ h1 {
   }
   .navbar-toggle {
       display: block;
-      background: #008a96;
+      background: #00626B;
       margin-right: 0;
   }
   .navbar-collapse.collapse {
@@ -378,7 +398,7 @@ span.cart-count {
     font-weight: 500;
 }
 .site-footer {
-    background-color: #008a96;
+    background-color: #00626B;
     padding: 55px 0 0;
     color: #fff;
     font-family: 'Muli', sans-serif;
@@ -567,7 +587,7 @@ ul.social-icons li.social-icons-label {
     text-decoration: line-through;
 }
 .sale-price {
-    color: #d04b64;
+    color: #9E293E;
 }
 del.original-price {
     font-weight: 500;
@@ -640,7 +660,7 @@ span.freeshipping {
     content: "";
     width: 4px;
     height: 57%;
-    background-color: #008a96;
+    background-color: #00626B;
     display: block;
     position: absolute;
     top: 11px;
